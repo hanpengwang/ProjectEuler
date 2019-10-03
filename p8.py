@@ -6,7 +6,10 @@ def LargestProd(num, length):
     numList = [int(d) for d in str(num)]
     maxprod = 0 
     for i in range(len(numList)-length):
-        maxprod = max(maxprod, np.prod(numList[i:i+(length)]))
+        prod = np.prod(numList[i:i+(length)])
+        maxprod = max(maxprod, prod)
+        if prod == 9**length:
+            break
     print maxprod
 
 number = ('73167176531330624919225119674426574742355349194934\
