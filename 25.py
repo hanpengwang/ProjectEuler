@@ -9,4 +9,4 @@ def Fibonacci1000(NumDigits):
 
     print(Count+1)
     
-print(Fibonacci1000(1000))
+print(Fibonacci1000(999))
