@@ -6,22 +6,16 @@ Created on Wed Nov 13 19:22:47 2019
 @author: hanpeng
 """
 
-def numTransform(n):
-    ones = ["one","two","three","four", "five", "six","seven","eight","nine","ten","eleven","twelve", "thirteen", "fourteen", "fifteen","sixteen","seventeen", "eighteen","nineteen"]
-    tenth = ["twenty","thirty","forty", "fifty","sixty","seventy","eighty","ninety"]
- 
-    thousands = ["thousand"]
-    
-    ones = [len(i) for i in ones]
-    tenth = [len(i) for i in tenth]
-    thousands = [len(i) for i in thousands]
-    
-    90 * sum(ones[0:10]) + 10 * sum(ones[10:]) + 90 * sum(tenth) + 3 * 
-    
 
-    
- 
- 
-    
-    
+helper = {1:"one",2:"two",3:"three",4:"four", 5:"five", 6:"six",7:"seven",
+            8:"eight",9:"nine",10:"ten",11:"eleven",12:"twelve", 13:"thirteen", 
+            14:"fourteen", 15:"fifteen",16:"sixteen",17:"seventeen",18: "eighteen",19:"nineteen",
+            20:"twenty",30:"thirty",40:"forty", 50:"fifty",60:"sixty",70:"seventy",80:"eighty", 
+            90:"ninety",100:"hundred",1000:"thousand"}
 
+
+helper = list(map(lambda x:len(x),list(helper.values())))
+
+
+count =( len("and") * (891) + helper[-2] * (100*9) + helper[-1] 
+        + sum(helper[0:9]) * (9*10 +100) + sum(helper[9:19]) * 10 + sum(helper[19:27])*10*10) + 3
