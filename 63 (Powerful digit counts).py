@@ -8,24 +8,30 @@ Created on Sun Mar 29 15:52:26 2020
 
 
 def Pow_counts():
-    
-    count = 0
-    
-    n = 1
-    
-    
-    base = 1 
-    find = [False,]
-    while True:
-        
-        if find = False:
-            Pow_num = base ** n
-            if len(str(Pow_num)) = n:
+    count = 1
+    for base in range(2,10):
+        power = 1
+        while True:
+            #print(count)
+            result = base ** power 
+           
+            if len(str(result)) == power:
                 count += 1
-                find = True
-            base += 1
+                print(result)
+            elif len(str(result)) < power:
+                break
+            
+            power += 1
+    
+    return count
+
+
+print(Pow_counts())
+           
         
-        elif find = True:
+               
+           
+        
             
             
         

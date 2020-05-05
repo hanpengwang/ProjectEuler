@@ -35,7 +35,8 @@ def Reciprocal_cycles():
             
         
         
-            ### method: slice a interval(from 1 to inf) from first element in the list, check equality of sum(interval)*len(list)/len(interval) == sum(interval) 
+Reciprocal_cycles()
+ ### method: slice a interval(from 1 to inf) from first element in the list, check equality of sum(interval)*len(list)/len(interval) == sum(interval) 
         
         
     

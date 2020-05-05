@@ -6,32 +6,43 @@ Created on Thu Jan 23 21:44:38 2020
 @author: hanpeng
 """
 
+from math import sqrt
 
-def Check_pen(p):
-    num = (2 * p + 1/12)**0.5 / 3**0.5 + 1/6
-    return int(str(num).split(".")[1]) < 10
+def Check_pen(N):
+    ##complete rhs equation square and get this 
+    n = 1/6 + sqrt((2*N+1/12)/3)
+    return True if abs(n - round(n)) < 10**-4 else False
 
-def Generate(n):
+
+
+def Generate_pen(n):
     return n*(3*n - 1) / 2
 
-def Pentagon_numbers():
-    l = []
-    
-    Min = 10**10
-    
-    for i in range(2*10**4)[1:]:
-        l.append(int(Generate(i)))
-    
-    for p1 in l:
-        for p2 in l[p1:]:
-            if Check_pen(p1+p2) and Check_pen(p2-p1):
-                print(p2-p1)
-                Min = min(Min, (p2-p1))
-                
-                
-    return Min
 
+
+def Pentagon_numbers():
+    
+    MIN = 10 ** 10
+    #set an upper bound to trick the question
+    for i1 in range(1,10**4):
+        p1 = Generate_pen(i1)
+        
+        for i2 in range(i1+1,10**4):
+            p2 = Generate_pen(i2)
+            SUM = p1 + p2
+            DIFF = p2 - p1 
+            if Check_pen(SUM) and Check_pen(DIFF):
+                MIN = min(MIN,DIFF)
+                
     
     
+    return MIN
+                
+
 
 print(Pentagon_numbers())
+
+
+    
+    
+
