@@ -6,7 +6,19 @@ Created on Sat Nov 16 10:49:42 2019
 @author: hanpeng
 """
 
-def coinSums():
-    tp = (200, 100, 50, 20, 10, 5, 2, 1)
-    for i in tp:
-        200 - 
+
+
+
+
+
+def coinSums(n):
+    coins = [1, 2, 5, 10, 20, 50, 100, 200]
+    arr = [1] + [0]*n
+    for coin in coins:
+        for i in range(coin, n+1):
+            arr[i] += arr[i-coin]
+
+    print(arr[-1])
+
+
+coinSums(200)
